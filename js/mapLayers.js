@@ -5,7 +5,7 @@ const layers = {
         "source": "boundaries",
         "source-layer": "municipalities",
         "paint": {
-            'line-width': 0.5,
+            'line-width': 1,
             'line-color': '#4a5c64'
         }
     },

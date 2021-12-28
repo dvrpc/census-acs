@@ -34,8 +34,15 @@
         <nav class="flex-row flex-between">
             <div class="flex-row">
                 <a href="/" class="nav-links"><img src="./img/DVRPC-logo.png" alt="DVRPC logo" id="dvrpc-logo" class="nav-logos" /></a>
+                
                 <span class="nav-vr">|</span>
-                <button id="modal-toggle" class="nav-btn nav-links">about</button>
+                
+                <h1>ACS Data Connector</h1>
+                
+                <!-- @TODO modal might not be needed -->
+                <!-- 
+                    <button id="modal-toggle" class="nav-btn nav-links">about</button>
+                -->
             </div>
 
             <div>
@@ -45,23 +52,26 @@
 
         <main class="map" id="map">
             <section class="overlay">
-                <h2>How to</h2>
-                <ul>
+                <h2 class="overlay-h2">How to</h2>
+                <ul class="overlay-ul">
                     <li>
-                        Select census geography (block, tract, municipality or county) and year (2010 or 2020).
+                        Select census geography (block, tract, municipality or county) from the dropdown above.
                     </li>
                     <li>
-                        Click geographies to open new tab with ACS data for selected geography and year.
+                        Hover over geographies and click/tap to open new tab with ACS data for selected geography.
                     </li>
                 </ul>
+
+                <hr class="overlay-hr" />
+
+                <footer class="flex-row flex-align-center">
+                    contact: <a href="mailto:kkorejko@dvrpc.org"> Kim Korejko</a>
+                </footer>
             </section>
         </main>
 
-        <footer class="flex-row flex-align-center">
-            contact: Kim Korejko <a href="mailto:kkorejko@dvrpc.org">kkorejko@dvrpc.org</a>
-        </footer>
-
-        <div id="modal" class="modal" role="dialog">
+        <!-- @TODO modal might not be needed -->
+        <!-- <div id="modal" class="modal" role="dialog">
             <div class="modal-content">
                 <span id="close-modal" class="close-modal">&times;</span>
         
@@ -72,7 +82,7 @@
                     <p>Quickly get census data by geographic level. Choose between tract, block, municipal or county level on the dropdown at the top of the page. Click on geographic areas to open a new tab with ACS data for the selected area.</p>
                 </section>
             </div>
-        </div>
+        </div> -->
 
         <script src="https://api.mapbox.com/mapbox-gl-js/v2.0.1/mapbox-gl.js"></script>
     </body>

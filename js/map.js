@@ -3,9 +3,9 @@ mapboxgl.accessToken = 'pk.eyJ1IjoibW1vbHRhIiwiYSI6ImNqZDBkMDZhYjJ6YzczNHJ4cno5e
 const initMap = () => {
     return new mapboxgl.Map({
         container: 'map',
-        style: 'mapbox://styles/mapbox/light-v10',
+        style: 'mapbox://styles/mapbox/outdoors-v11',
         center: [-75.25, 40.071],
-        zoom: 8.25
+        zoom: 8.425
     })
 }
 
@@ -13,7 +13,7 @@ const makeRegionalExtentControl = map => {
     // coordinates and zoom level for regional extent
     const dvrpcExtent = {
         center: [-75.25, 40.071],
-        zoom: 8.25
+        zoom: 8.425
     }
 
     const navigationControl = new mapboxgl.NavigationControl();

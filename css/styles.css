@@ -11,6 +11,9 @@ body {
 h1 {
     text-align: center;
 }
+a {
+    color: var(--theme-black);
+}
 :root {
     --theme-dvrpc: #0078ae;
     --theme-black: #505a5e;
@@ -51,7 +54,8 @@ h1 {
 
 
 /* Modal */
-.modal-content{
+/* @TODO modal might not be needed */
+/* .modal-content{
     box-shadow: var(--box-shadow);
 }
 .modal-toggle, .close-modal{
@@ -93,7 +97,7 @@ h1 {
 .modal-hr {
     margin: var(--padding-double) auto;
     width: 45em;
-}
+} */
 /* END Modal */
 
 
@@ -107,9 +111,6 @@ nav {
     color: #f7f7f7;
     box-shadow: var(--box-shadow);
     z-index: 1;
-}
-.nav-links {
-    color: #f7f7f7;
 }
 .nav-btn {
     background: transparent;
@@ -130,7 +131,7 @@ nav {
 
 /* Main Webmap Area */
 .map {
-    height: 88vh;
+    height: 94vh;
     width: 100%;
 }
 #regional-extent-img {
@@ -141,12 +142,10 @@ nav {
 }
 .mapboxgl-popup-content {
     padding: var(--padding-double) var(--padding);
+    font-size: 1.25em;
 }
 .popup-span {
     display: block;
-}
-.popup-span:not(:last-of-type) {
-    border-bottom: 1px dotted var(--theme-black);
 }
 /* END Main Webmap Area */
 
@@ -157,8 +156,8 @@ nav {
     z-index: 2;
     position: absolute;
     max-width: 22.5em;
-    /* map pad(10px) + map pad(10px) + section padding(20px) = 40px */
-    max-height: calc(88vh - 40px);
+    /* map height(96vh) - (map pad(10px) + map pad(10px) + section padding(20px) = 40px) */
+    max-height: calc(96vh - 40px);
     overflow-x: hidden;
     overflow-y: auto;
     top: 10px;
@@ -170,10 +169,17 @@ nav {
     border-radius: var(--border-radius);
 }
 .overlay-h2 {
+    font-size: 1.25em;
+    margin-bottom: var(--padding);
+}
+.overlay-ul {
     font-size: 1em;
 }
+.overlay-ul li {
+    margin-bottom: var(--padding);
+}
 .overlay-hr {
-    margin: var(--padding-double) 0;
+    margin: var(--padding) 0;
 }
 /* END Map Overlays */
 
@@ -181,11 +187,6 @@ nav {
 
 /* Footer */
 footer {
-    position: relative;
-    box-shadow: var(--box-shadow-up);
-    padding: 0 var(--padding);
-    height: 6vh;
-    background-color: var(--theme-black);
-    color: #f7f7f7;
+    font-size: 0.8em;
 }
 /* END Footer */
