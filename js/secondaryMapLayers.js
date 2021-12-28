@@ -25,9 +25,6 @@ const secondaryLayers = {
         },
         "filter": [
             "==",
-            "dvrpc",
-            "Yes",
-            "==",
             'geoid',
             ''
           ]

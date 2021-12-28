@@ -30,6 +30,9 @@ const muniHTML = props => {
 }
 const countyHTML = props => {
     return `
+        <span class="popup-span">
+            ${props.name} County
+        </span>
     `
 }
 
