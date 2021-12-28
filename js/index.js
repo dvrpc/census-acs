@@ -1,7 +1,8 @@
 import makeMap from './map.js'
 import sources from './mapSources.js'
 import mapLayers from './mapLayers.js'
-import handleModal from './modal.js'
+import handleModal from './modal.js' 
+import { makePopup, makePopupContent } from './popup.js'
 // add additional imports here (popups, forms, etc)
 
 
@@ -22,16 +23,20 @@ map.on('load', () => {
     for(const source in sources) map.addSource(source, sources[source])
     for(const layer in mapLayers) map.addLayer(mapLayers[layer])
 
+    const popup = makePopup()
+
     map.on('mousemove', 'municipality-fill', e => {
         map.getCanvas().style.cursor = 'pointer'
         map.setFilter('municipality-hover', ['==', 'geoid', e.features[0].properties['geoid']])
-        // generatePopup(popup, e)
+
+        makePopupContent(map, e, popup)
     })
 
     map.on('mouseleave', 'municipality-fill', e =>{
         map.getCanvas().style.cursor = ''
         map.setFilter('municipality-hover', ['==', 'geoid', ''])
-        // popup.remove()
+
+        popup.remove()
     })
 
     map.on('click', 'municipality-fill', e => {

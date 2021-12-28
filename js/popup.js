@@ -1,31 +1,36 @@
 const makePopup = () => new mapboxgl.Popup()
 
-const makePopupContent = (map, target, popup) => {
-    const html = makePopupHTML(target.props)
+const makePopupContent = (map, e, popup) => {
+    const features = e.features[0]
+    const layer = features.layer.id
+    const props = features.properties
+    let html;
+
+    // different geographies will have props
+    switch(layer) {
+        case 'county-fill':
+            html = countyHTML(props)
+            break
+        default:
+            html = muniHTML(props)
+    }
 
     popup
-    .setLngLat(target.lngLat)
+    .setLngLat(e.lngLat)
     .setHTML(html)
     .addTo(map)
 }
 
-// @params props
-    // {
-    //  display: 'name to display',
-    //  prop: 'value of property'
-    // }
-const makePopupHTML = props => {
-    let html = ''
-
-    props.forEach(prop => {
-        html += `
-            <span class="popup-span">
-                ${prop.display}: <strong>${prop.prop}</strong> 
-            </span>
-        `
-    })
-    
-    return html
+const muniHTML = props => {
+    return `
+        <span class="popup-span">
+            ${props.name}
+        </span>
+    `
+}
+const countyHTML = props => {
+    return `
+    `
 }
 
 export { makePopup, makePopupContent }
