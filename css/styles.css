@@ -53,55 +53,6 @@ a {
 
 
 
-/* Modal */
-/* @TODO modal might not be needed */
-/* .modal-content{
-    box-shadow: var(--box-shadow);
-}
-.modal-toggle, .close-modal{
-    cursor: pointer;
-    font-size: inherit;
-}
-.modal{
-    position: fixed;
-    display: none;
-    z-index: 3;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background: rgba(0, 0, 0, 0.3);
-}
-.modal-content{
-    position: relative;
-    background: #fff;
-    width: 50em;
-    padding: var(--padding-double);
-    border-radius: var(--border-radius);
-    filter: brightness(150%);
-}
-.modal-section {
-    width: 45em;
-    margin: 0 auto;
-}
-.close-modal{
-    position: absolute;
-    right: 10px;
-    top: 5px;
-    font-size: 1.5em;
-}
-.modal-content-subheader {
-    text-align: center;
-    margin-bottom: 1rem;
-}
-.modal-hr {
-    margin: var(--padding-double) auto;
-    width: 45em;
-} */
-/* END Modal */
-
-
-
 /* Navbar */
 nav {
     position: relative;
@@ -124,6 +75,14 @@ nav {
 #dvrpc-logo {
     display: block;
     width: 75px;
+}
+.toggle-form {
+    margin-bottom: var(--padding);
+} 
+.form-select {
+    background-color: var(--theme-white);
+    border-radius: var(--border-radius);
+    padding: var(--padding-half);
 }
 /* END Navbar */
 

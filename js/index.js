@@ -1,14 +1,12 @@
 import makeMap from './map.js'
 import sources from './mapSources.js'
 import mapLayers from './mapLayers.js'
-import handleModal from './modal.js' 
 import { makePopup, makePopupContent } from './popup.js'
 // add additional imports here (popups, forms, etc)
 
 
-const modal = document.getElementById('modal')
-const modalToggle = document.getElementById('modal-toggle')
-const closeModal = document.getElementById('close-modal')
+
+const form = document.getElementById('nav-form')
 // get additional elements here (forms, etc)
 
 
@@ -44,7 +42,8 @@ map.on('load', () => {
         const geoid = e.features[0].properties['geoid']
         window.open(`https://data.census.gov/cedsci/profile?g=${code}${geoid}`)
     })
-})
 
-// modal
-handleModal(modal, modalToggle, closeModal)
+    navForm.onchange = e => {
+        e.target
+    }
+})

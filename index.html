@@ -37,26 +37,32 @@
                 
                 <span class="nav-vr">|</span>
                 
-                <h1>ACS Data Connector</h1>
-                
-                <!-- @TODO modal might not be needed -->
-                <!-- 
-                    <button id="modal-toggle" class="nav-btn nav-links">about</button>
-                -->
-            </div>
-
-            <div>
-                <img src="./imgs/project-logo.png" alt="project logo" class="nav-logos">
+                <h1>ACS Data Connector</h1>                
             </div>
         </nav>
 
         <main class="map" id="map">
             <section class="overlay">
-                <h2 class="overlay-h2">How to</h2>
+
+                <h2 class="overlay-h2">Get started</h2>
+
+                <form id="toggle-form" class="toggle-form">
+                    <label>
+                        select census geography:
+                        <select class="form-select">
+                            <option value="municipal">municipal</option>
+                            <option value="county">county</option>
+                            <option value="block">block</option>
+                            <option value="tract">tract</option>
+                        </select>
+                    </label>
+                </form>
+
                 <ul class="overlay-ul">
                     <li>
                         Select census geography (block, tract, municipality or county) from the dropdown above.
                     </li>
+        
                     <li>
                         Hover over geographies and click/tap to open new tab with ACS data for selected geography.
                     </li>
@@ -69,20 +75,6 @@
                 </footer>
             </section>
         </main>
-
-        <!-- @TODO modal might not be needed -->
-        <!-- <div id="modal" class="modal" role="dialog">
-            <div class="modal-content">
-                <span id="close-modal" class="close-modal">&times;</span>
-        
-                <h2 class="modal-content-subheader">ACS Data Connector (?)</h2>
-
-                <section class="modal-section">
-                    <h3>About</h3>
-                    <p>Quickly get census data by geographic level. Choose between tract, block, municipal or county level on the dropdown at the top of the page. Click on geographic areas to open a new tab with ACS data for the selected area.</p>
-                </section>
-            </div>
-        </div> -->
 
         <script src="https://api.mapbox.com/mapbox-gl-js/v2.0.1/mapbox-gl.js"></script>
     </body>
