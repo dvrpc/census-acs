@@ -81,6 +81,10 @@ a {
     padding: var(--padding-double);
     border-radius: var(--border-radius);
 }
+.modal-content small {
+    display: block;
+    margin-top: var(--padding);
+}
 .modal-section {
     width: 45em;
     margin: 0 auto;
