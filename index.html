@@ -51,7 +51,7 @@
 
                 <h2 class="overlay-h2">Get started</h2>
 
-                <form id="toggle-form" class="toggle-form">
+                <form id="toggle-form" class="toggle-form flex-column">
                     <label>
                         select census geography:
                         <select class="form-select" autocomplete="off">
@@ -61,6 +61,14 @@
                             <!--
                             <option value="block">block</option>
                             <option value="block group">block groups</option> -->
+                        </select>
+                    </label>
+
+                    <label>
+                        select census year data:
+                        <select class="form-select hidden" autocomplete="off">
+                            <option value="2010">2010</option>
+                            <option value="2020">2020</option>
                         </select>
                     </label>
                 </form>
