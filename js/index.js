@@ -3,7 +3,11 @@ import sources from './mapSources.js'
 import mapLayers from './mapLayers.js'
 import { setHoverEvents, removeHoverEvents } from './mapEvents.js'
 import { makePopup } from './popup.js'
+import handleModal from './modal.js'
 
+const modal = document.getElementById('modal')
+const modalToggle = document.getElementById('modal-toggle')
+const closeModal = document.getElementById('close-modal')
 const toggleForm = document.getElementById('toggle-form')
 
 // map
@@ -29,3 +33,6 @@ map.on('load', () => {
         })
     }
 })
+
+// modal
+handleModal(modal, modalToggle, closeModal)
