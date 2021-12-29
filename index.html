@@ -51,8 +51,8 @@
 
                 <h2 class="overlay-h2">Get started</h2>
 
-                <form id="toggle-form" class="toggle-form">
-                    <label>
+                <form id="toggle-form" class="toggle-form flex-column">
+                    <label class="flex-row flex-align-center flex-between">
                         select census geography:
                         <select class="form-select" autocomplete="off">
                             <option value="municipality">municipal</option>
@@ -63,11 +63,22 @@
                             <option value="block group">block groups</option> -->
                         </select>
                     </label>
+
+                    <label id="year-select" class="flex-row flex-align-center flex-between hidden">
+                        select census year data:
+                        <select class="form-select" autocomplete="off">
+                            <option value="2010">2010</option>
+                            <option value="2020">2020</option>
+                        </select>
+                    </label>
                 </form>
 
                 <ul class="overlay-ul">
                     <li>
                         Select census geography (county, municipality, tract, block group, block) from the dropdown above.
+                        <ul class="overlay-ul">
+                            <li><small>some geographies (tract, block group and block) have an additional dropdown for data years.</small></li>
+                        </ul>
                     </li>
         
                     <li>

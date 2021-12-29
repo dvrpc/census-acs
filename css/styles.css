@@ -49,6 +49,9 @@ a {
 .flex-wrap {
     flex-wrap: wrap
 }
+.hidden {
+    display: none;
+}
 /* END General */
 
 
@@ -139,6 +142,10 @@ nav {
     background-color: var(--theme-offwhite);
     border-radius: var(--border-radius);
     padding: var(--padding-half);
+    width: 20ch;
+}
+.form-select:last-child {
+    margin-top: var(--padding);
 }
 /* END Navbar */
 
@@ -211,6 +218,7 @@ nav {
 }
 .overlay-ul {
     font-size: 1em;
+    padding-left: var(--padding-double);
 }
 .overlay-ul li {
     margin-bottom: var(--padding);

@@ -9,6 +9,7 @@ const modal = document.getElementById('modal')
 const modalToggle = document.getElementById('modal-toggle')
 const closeModal = document.getElementById('close-modal')
 const toggleForm = document.getElementById('toggle-form')
+const yearSelect = document.getElementById('year-select')
 
 // map
 const map = makeMap()
@@ -28,7 +29,14 @@ map.on('load', () => {
         options.forEach(option => {
             const val = option.value
 
-            if(option.selected) setHoverEvents(val, map, popup)
+            if(option.selected) {                
+                // conditionally render time selector
+                // @TODO: toggling the time select throws a silent error b/c it's not set up to handle it yet
+                if(val === 'municipality' || val === 'county') yearSelect.classList.add('hidden')
+                else yearSelect.classList.remove('hidden')
+
+                setHoverEvents(val, map, popup)
+            }
             else removeHoverEvents(val, map)
         })
     }
