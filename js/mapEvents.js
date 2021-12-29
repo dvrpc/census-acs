@@ -1,8 +1,6 @@
 import { makePopupContent } from "./popup.js"
 import secondaryLayers from './secondaryMapLayers.js'
 
-
-
 // variables
 const urlCodes = {
     municipality: '0600000US',
@@ -11,8 +9,6 @@ const urlCodes = {
     block: '1000000US',
     'block groups': '1500000US'
 }
-
-
 
 const setHoverEvents = (val, map, popup) => {
     const code = urlCodes[val]
@@ -47,15 +43,12 @@ const setHoverEvents = (val, map, popup) => {
 }
 
 const addHoverLayers = (val, map) => {
-    secondaryLayers[`${val}Outline`]
-
     map.addLayer(secondaryLayers[`${val}Outline`])
     map.addLayer(secondaryLayers[`${val}Hover`])
     map.addLayer(secondaryLayers[`${val}Fill`])
 }
 
 const removeHoverEvents = (val, map) => {
-
     if(!map.getLayer(`${val}-outline`)) return
 
     map.setLayoutProperty(`${val}-outline`, 'visibility', 'none')

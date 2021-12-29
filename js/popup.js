@@ -2,14 +2,16 @@ const makePopup = () => new mapboxgl.Popup()
 
 const makePopupContent = (map, e, popup) => {
     const features = e.features[0]
-    const layer = features.layer.id
     const props = features.properties
     let html;
 
-    // different geographies will have props
-    switch(layer) {
+    // different geographies will have different props
+    switch(features.layer.id) {
         case 'county-fill':
             html = countyHTML(props)
+            break
+        case 'tract-fill':
+            html = tractHTML(props)
             break
         default:
             html = muniHTML(props)
@@ -32,6 +34,13 @@ const countyHTML = props => {
     return `
         <span class="popup-span">
             ${props.name} County
+        </span>
+    `
+}
+const tractHTML = props => {
+    return `
+        <span class="popup-span">
+                geoid: ${props.geoid}
         </span>
     `
 }

@@ -3,13 +3,8 @@ import sources from './mapSources.js'
 import mapLayers from './mapLayers.js'
 import { setHoverEvents, removeHoverEvents } from './mapEvents.js'
 import { makePopup } from './popup.js'
-// add additional imports here (popups, forms, etc)
-
-
 
 const toggleForm = document.getElementById('toggle-form')
-// get additional elements here (forms, etc)
-
 
 // map
 const map = makeMap()

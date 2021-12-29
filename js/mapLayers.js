@@ -35,7 +35,6 @@ const layers = {
             ''
           ]
     }
-    // add more layers here
 }
 
 export default layers
