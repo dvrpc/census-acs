@@ -159,6 +159,9 @@ nav {
     padding: var(--padding-double) var(--padding);
     font-size: 1.25em;
 }
+.mapboxgl-ctrl-group {
+    box-shadow: var(--box-shadow);
+}
 .mapboxgl-ctrl-group button {
     /* defafult(39px) + padding(10px) */
     width: 49px;
