@@ -174,8 +174,11 @@ nav {
     width: 49px;
     height: 49px;
 }
+.mapboxgl-ctrl-geocoder--icon-search {
+    top: 15px;
+}
 .mapboxgl-ctrl-geocoder--input {
-    padding: 20px 35px;
+    padding: 25px 35px;
 }
 .popup-span {
     display: block;
