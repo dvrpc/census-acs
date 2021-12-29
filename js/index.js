@@ -31,6 +31,7 @@ map.on('load', () => {
 
             if(option.selected) {                
                 // conditionally render time selector
+                // @TODO: toggling the time select throws a silent error b/c it's not set up to handle it yet
                 if(val === 'municipality' || val === 'county') yearSelect.classList.add('hidden')
                 else yearSelect.classList.remove('hidden')
 
