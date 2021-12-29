@@ -23,21 +23,25 @@ const setHoverEvents = (val, map, popup) => {
     }
 
     map.on('mousemove', `${val}-fill`, e => {
+        const geoid = val === 'block' ? e.features[0].properties['GEOID10'] : e.features[0].properties['geoid']
+
         map.getCanvas().style.cursor = 'pointer'
-        map.setFilter(`${val}-hover`, ['==', 'geoid', e.features[0].properties['geoid']])
+        map.setFilter(`${val}-hover`, ['==', 'geoid', geoid])
 
         makePopupContent(map, e, popup)
     })
 
-    map.on('mouseleave', `${val}-fill`, e =>{
+    map.on('mouseleave', `${val}-fill`, () => {
+        const geoid = val === 'block' ? 'GEOID10' : 'geoid'
+        
         map.getCanvas().style.cursor = ''
-        map.setFilter(`${val}-hover`, ['==', 'geoid', ''])
+        map.setFilter(`${val}-hover`, ['==', geoid, ''])
 
         popup.remove()
     })
 
     map.on('click', `${val}-fill`, e => {
-        const geoid = e.features[0].properties['geoid']
+        const geoid = e.features[0].properties['geoid'] || e.features[0].properties['GEOID10']
         window.open(`https://data.census.gov/cedsci/profile?g=${code}${geoid}`)
     })
 }

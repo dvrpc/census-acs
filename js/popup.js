@@ -13,6 +13,9 @@ const makePopupContent = (map, e, popup) => {
         case 'tract-fill':
             html = tractHTML(props)
             break
+        case 'block-fill':
+            html = blockHTML(props)
+            break
         default:
             html = muniHTML(props)
     }
@@ -41,6 +44,13 @@ const tractHTML = props => {
     return `
         <span class="popup-span">
                 geoid: ${props.geoid}
+        </span>
+    `
+}
+const blockHTML = props => {
+    return `
+        <span class="popup-span">
+                geoid: ${props.GEOID10}
         </span>
     `
 }
