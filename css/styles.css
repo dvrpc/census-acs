@@ -88,6 +88,9 @@ a {
 .modal-section h3 {
     color: var(--theme-dvrpc-accent);
 }
+.modal-section p {
+    margin-top: var(--padding-half);
+}
 .close-modal{
     position: absolute;
     right: 10px;
@@ -144,7 +147,7 @@ nav {
     padding: var(--padding-half);
     width: 20ch;
 }
-.form-select:last-child {
+#year-select {
     margin-top: var(--padding);
 }
 /* END Navbar */
