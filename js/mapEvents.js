@@ -47,7 +47,7 @@ const setHoverEvents = (val, map, popup) => {
 }
 
 const addHoverLayers = (val, map) => {
-    map.addLayer(secondaryLayers[`${val}Outline`])
+    map.addLayer(secondaryLayers[`${val}Outline`], 'road-label')
     map.addLayer(secondaryLayers[`${val}Hover`])
     map.addLayer(secondaryLayers[`${val}Fill`])
 }

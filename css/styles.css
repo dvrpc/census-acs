@@ -134,6 +134,7 @@ nav {
 .overlay-h2 {
     font-size: 1.25em;
     margin-bottom: var(--padding);
+    color: var(--theme-dvrpc);
 }
 .overlay-ul {
     font-size: 1em;
