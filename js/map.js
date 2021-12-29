@@ -11,12 +11,12 @@ const initMap = () => {
 
 const makeRegionalExtentEls = map => {
     // coordinates and zoom level for regional extent
+    const zoom = window.innerWidth <= 420 ? 7.3 : 8.425
+
     const dvrpcExtent = {
         center: [-75.25, 40.071],
-        zoom: 8.425
+        zoom: zoom
     }
-
-    const navigationControl = new mapboxgl.NavigationControl();
 
     // create custom button elements
     const button = document.createElement('button')
@@ -46,11 +46,13 @@ const makeControls = map => {
         bbox: [-76.09405517578125,39.49211914385648,-74.32525634765625,40.614734298694216],
         marker: false
     })
+
     const navigationControl = new mapboxgl.NavigationControl();
     const extentControl = makeRegionalExtentEls(map)
 
     // plug into mapbox fncs
     map.addControl(geocoder, 'top-right')
+    
     navigationControl._extent = extentControl
     navigationControl._container.appendChild(extentControl)
 
